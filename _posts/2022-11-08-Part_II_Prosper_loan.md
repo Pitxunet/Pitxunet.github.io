@@ -2,7 +2,7 @@
 layout: post
 title: "Impact of factors on loans' outcome"
 subtitle: "Analyzing correlation between factors and interest rate and loans' final outcome"
-background: '\img\posts\loans\jonathan-cooper-0O2Pp6-mOkY-unsplash.jpg'
+background: '/img/posts/loans/jonathan-cooper-0O2Pp6-mOkY-unsplash.jpg'
 ---
 Photo by <a href="https://unsplash.com/@theshuttervision?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonathan Cooper</a> on <a href="https://unsplash.com/s/photos/banking?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
