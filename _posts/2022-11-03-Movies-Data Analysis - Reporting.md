@@ -1,12 +1,15 @@
 ---
 layout: post
-title: "TMDb Movies Data Analysis"
-subtitle: "Looking for trends in movie sample from TMDb"
-background: ''
+title: "Trends in TMDb Movie sample"
+subtitle: "I used Python pandas to gather, wrangle and explore the data set"
+background: '\img\posts\Tmdb\themoviedb.jpg'
 ---
+*Image from the Movie database*
 
-# Project: TMDb Movies Data Analysis
-## by Estitxu Larralde
+# TMDb Movies Data Analysis
+by Estitxu Larralde
+
+      
 
 ## Table of Contents
 <ul>
@@ -58,8 +61,8 @@ I asked myself:
 - Are sequels' ratings high as compared to the original movie?
 
 
-<a id='wrangling'></a>
 
+<a id='wrangling'></a>
 ## Data Wrangling
 
 
@@ -70,7 +73,8 @@ In this section I loaded the dataset. I then explored the first few rows (df.hea
 
 ### Data Cleaning
 
-In this part of the analysis, I continued to inspect the data, find issues to be solved to make it more reliable and easier to analyse.
+In this part of the analysis, I continued to inspect the data, to find issues to be solved to make it more reliable and easier to analyse.
+
 
 #### a) Dropping irrelevant columns
 
@@ -85,8 +89,11 @@ I dropped all the irrelevant columns to simplify the dataset and the analysis.
 
 Certain columns contained values separated by pipe characters. I replaced them by commas.
 
+
 #### c) Figures in scientific notation
+
 As it's not easy to interpret dollar figures in scientific notation, I converted "budget" and "revenue" columns into float formatting
+
 
 #### d) Null values
 
@@ -95,118 +102,14 @@ I checked and found over 1000 null values in the "production_companies" column. 
 The distribution was very similar. The only difference was that in the null values dataset movies had in average less than 50 votes. I decided to go ahead and drop all rows containing null values.
 
   
-
 #### e) Duplicated values
 
 I found only one duplicated row in the dataset. I dropped the row. 
 
+
 #### f) Data format
 
 I changed "release_date" datatype to datetime as it had the wrong data format.
-
-
-```python
-## Looking up the descriptive statistics of the df
-df.describe()
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>runtime</th>
-      <th>vote_count</th>
-      <th>vote_average</th>
-      <th>budget_adj</th>
-      <th>revenue_adj</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>3679.000</td>
-      <td>3679.000</td>
-      <td>3679.000</td>
-      <td>3679.000</td>
-      <td>3679.000</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>109.561</td>
-      <td>547.413</td>
-      <td>6.182</td>
-      <td>45364250.989</td>
-      <td>142011525.137</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>19.855</td>
-      <td>894.797</td>
-      <td>0.790</td>
-      <td>45191098.534</td>
-      <td>219481097.448</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>26.000</td>
-      <td>10.000</td>
-      <td>2.200</td>
-      <td>0.969</td>
-      <td>2.862</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>96.000</td>
-      <td>78.000</td>
-      <td>5.700</td>
-      <td>13816365.762</td>
-      <td>20375176.800</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>106.000</td>
-      <td>218.000</td>
-      <td>6.200</td>
-      <td>31020737.363</td>
-      <td>65464324.000</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>120.000</td>
-      <td>595.000</td>
-      <td>6.700</td>
-      <td>62130112.856</td>
-      <td>170436409.521</td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td>338.000</td>
-      <td>9767.000</td>
-      <td>8.400</td>
-      <td>425000000.000</td>
-      <td>2827123750.412</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
 
 
 #### g) Incoherent values
@@ -215,25 +118,22 @@ After running the descriptive statistics on the dataframe, I realized that minim
 
 The first 30 ascending values in column 'budget_adj' seemed too low for the production of a movie. Nevertheless, and as I didn't know which amount is the minimum reasonable for the production of a movie, I decided to keep in mind this limitation of the dataset when interpreting the results.
 
+
+
 <a id='eda'></a>
 ## Exploratory Data Analysis
 
+I proceeded to explore the data to find the answer to my questions at the beginning of the project
 
-
-### Are there companies more successful than others producing well rated movies?
+#### Are there some companies more successful than others producing well rated movies?
 
 First, I tried to compare the number of production companies in the dataset to the number of companies of the movies with best ratings (75th - 100th percentile, i.e. over 6.7 points). This didn't shred any light onto the question as the number of unique companies in the best rated movies was roughly 30% of the total number of unique production companies of the dataset (729 vs 2905 companies).
 
 Then I checked the distribution of the production companies within that group.
 
 
-```python
-df_p['production_companies'].value_counts().head(20).plot(kind='bar');
-```
-
-
     
-![png](output_21_0.png)
+![png](\img\posts\Tmdb\output_21_0.png)
     
 
 
@@ -241,131 +141,56 @@ As per our dataset, it seems Paramount Pictures, Universal Pictures, Coumbia Pic
 
 We can see also that Walt Disney is not in the top three but it has coproduced some of the films and produces them under different names: Walt Disney Pictures, Walt Disney Productions, Walt Disney Feature Animation.
 
-As we can see below, the Production Companies producing more well rated movies by TMDb users are also producing many more movies than other Production Companies (in average each company - or compound of companies- produced 1.27 movies) : 
-
-
-```python
-## Count of produced movies per production company, all ratings included. Only first 20,
-##descending order
-df['production_companies'].value_counts().head(20)
-```
-
-
-
-
-    Paramount Pictures                                     75
-    Universal Pictures                                     57
-    Columbia Pictures                                      39
-    New Line Cinema                                        37
-    Warner Bros.                                           32
-    Metro-Goldwyn-Mayer (MGM)                              25
-    Touchstone Pictures                                    23
-    Walt Disney Pictures                                   21
-    Twentieth Century Fox Film Corporation                 21
-    20th Century Fox                                       20
-    Orion Pictures                                         17
-    Miramax Films                                          17
-    Dimension Films                                        16
-    TriStar Pictures                                       15
-    DreamWorks Animation                                   15
-    United Artists                                         15
-    Columbia Pictures Corporation                          15
-    Walt Disney Pictures, Pixar Animation Studios          13
-    Walt Disney Pictures, Walt Disney Feature Animation    12
-    Imagine Entertainment, Universal Pictures              11
-    Name: production_companies, dtype: int64
-
-
+Production Companies producing more well rated movies by TMDb users are also producing many more movies than other Production Companies (in average each company - or compound of companies- produced 1.27 movies) 
 
 In the pie chart below we can see the ten production companies that produced more movies each. These are all big names of the cinema industry.
 
 
-```python
-#Number of movies, all ratings included, produced by first 10 production
-##companies with more movies in the dataset
-df['production_companies'].value_counts().head(10).plot(kind='pie');
-```
-
-
     
-![png](output_25_0.png)
+![png](\img\posts\Tmdb\output_25_0.png)
     
 
 
-### Are the most expensive movies also the most popular/best rated movies?
+#### Are the most expensive movies also the most popular/best rated movies?
 
 Now I would like to see if there is any correlation between the rating of a movie ('vote_average') and the budget used for producing it:
 
 
-```python
-## Plotting ratings against budget
-df.plot(x='vote_average', y='budget_adj', kind='scatter', title= 'Correlation between rating and production budget');
-```
-
-
     
-![png](output_28_0.png)
+![png](\img\posts\Tmdb\output_28_0.png)
     
 
 
 There is some positive correlation, but not very strong. There are a lot of movies with a small budget that got a good 'vote_average' in TMDb.
 
-### Is the rating of sequels better than the average rating? What's the distribution of the popularity of movies considered as sequels ?
+#### Is the rating of sequels better than the average rating? What's the distribution of the popularity of movies considered as sequels ?
 
 I personally find most sequels worse than the original title so I would like to see how many of the movies considered as sequels (53) are rated better than the mean value of 'vote_average' (6.182) and how many worse:
 
 
-```python
-mean_rating= df['vote_average'].mean()
-
-
-above_average=sequels[sequels['vote_average']>mean_rating].count()['original_title']
-below_average=sequels[sequels['vote_average']<mean_rating].count()['original_title']
-plt.bar(["above_average","below_average"], [above_average,below_average]);
-plt.title('Rating of sequels above or below vote_average mean');
-plt.ylabel('Vote_average');
-
-```
-
-
     
-![png](output_32_0.png)
+![png](\img\posts\Tmdb\output_32_0.png)
     
 
 
-### Is there a correlation between budget and profit? 
+#### Is there a correlation between budget and profit? 
 
 We've seen that there is no a strong correlation between 'budget' and 'vote_average'. Nevertheless, I'd like to see whether films that were more expensive to produce were also more profitable. 
 
-
-```python
-## plotting on budget and profit to see whether there is a correlation or not.
-
-df.plot(x='budget_adj', y='profit', kind='scatter');
-```
-
-
     
-![png](output_35_0.png)
+![png](\img\posts\Tmdb\output_35_0.png)
     
-
 
 There is a positive correlation which means that as the budget increases the profit sometimes does too. Nevertheless, as per the scatter plot we can see it's not very strong.
 
-### Is there a correlation between profit and good ratings in TMDb?
+
+#### Is there a correlation between profit and good ratings in TMDb?
 
 What about the correlation between 'profit' and 'vote_average'? Let's see if profitable films got a higher 'vote_average' than those that got a smaller profit.
 
-
-```python
-df.plot(x='vote_average', y='profit', kind='scatter');
-```
-
-
     
-![png](output_39_0.png)
+![png](\img\posts\Tmdb\output_39_0.png)
     
-
 
 The correlation is clearly positive between both variables. It means that profitable films got overall better ratings than films that were less profitable.
 
@@ -373,7 +198,6 @@ The correlation is clearly positive between both variables. It means that profit
 
 <a id='conclusions'></a>
 ## Conclusions
-
 
 
 I focused in the ratings of the films of the dataset and their relationship with other variables. 
@@ -393,16 +217,5 @@ An important limitation of the dataset is the number of missing values. There ar
 Another limitation is the one noticed in the column 'budget_adj'. Even after dropping all values equal to zero, there are some very low values in the column. Double checking budget_adj values or dropping rows that don't meet a minimum value could be solutions to improve the quality of the dataset.
 
 
-
-```python
-from subprocess import call
-call(['python', '-m', 'nbconvert', 'Investigate_a_Dataset.ipynb'])
-```
-
-
-
-
-    1
-
-
+Ps: to see the code I used, check my Jupyter Notebook <a href="https://github.com/Pitxunet/TMDb-movie-data/blob/main/TMDb%20Movies%20Data%20Analysis.ipynb">TMDb Movies Data Analysis</a> in project's GitHub repository
 
