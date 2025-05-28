@@ -2,7 +2,7 @@
 layout: post
 title: "Sustainable Energy Access: An End-to-End Project in Microsoft Fabric"
 subtitle: "From World Bank API ingestion to a star schema model and interactive Power BI dashboard"
-background: '\img\posts\fabric_end_to_end\nicholas-doherty-pONBhDyOFoM-unsplash.jpg'
+background: 'img\posts\fabric_end_to_end\nicholas-doherty-pONBhDyOFoM-unsplash.jpg'
 ---
 
 *<a href="https://unsplash.com/photos/white-electic-windmill-pONBhDyOFoM?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash">Photo</a> by <a href="https://unsplash.com/@nrdoherty">Nicholas Doherty</a> on <a href="https://unsplash.com">Unsplash</a>
@@ -107,16 +107,16 @@ A fully interactive Power BI report was developed within the Fabric environment,
 
 ##### *Pages 2 & 3: Comparison Through Indicators*
     
-    * Page 2: 
-          *  Two **bar charts**:
-	         * Installed renewable electricity-generating capacity (watts per capita)
-             * International financial flows to developing countries
-          * **Slicers** for selecting multiple countries/regions and a year range (e.g. 1990–2022)
+* Page 2: 
+    *  Two **bar charts**:
+	    * Installed renewable electricity-generating capacity (watts per capita)
+        * International financial flows to developing countries
+    * **Slicers** for selecting multiple countries/regions and a year range (e.g. 1990–2022)
 
 ![png](\img\posts\fabric_end_to_end\Page_2.png)
 
-    * Page 3:
-        * Two **column charts**:
+* Page 3:
+    * Two **column charts**:
           * Clustered column chart for Final consumption of renewable energy (PJ)
           * Stacked column chart for Share in total final energy consumption (%)
 
