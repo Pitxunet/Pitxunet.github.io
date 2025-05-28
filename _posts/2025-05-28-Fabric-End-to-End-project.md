@@ -2,7 +2,7 @@
 layout: post
 title: "Sustainable Energy Access: An End-to-End Project in Microsoft Fabric"
 subtitle: "From World Bank API ingestion to a star schema model and interactive Power BI dashboard"
-background: 'img\posts\fabric_end_to_end\nicholas-doherty-pONBhDyOFoM-unsplash.jpg'
+background: 'img/posts/fabric_end_to_end/nicholas-doherty-pONBhDyOFoM-unsplash.jpg'
 ---
 
 *<a href="https://unsplash.com/photos/white-electic-windmill-pONBhDyOFoM?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash">Photo</a> by <a href="https://unsplash.com/@nrdoherty">Nicholas Doherty</a> on <a href="https://unsplash.com">Unsplash</a>
@@ -125,19 +125,19 @@ A fully interactive Power BI report was developed within the Fabric environment,
 
 ##### *Pages 4 & 5: Data Coverage and Completeness*
 
-    * Page 4:
-        * A **matrix** with areas as rows and years as columns, showing the count of reported values
-        * **Cards** displaying:
-           * Number of covered countries
-           * Number of covered years
-           * Total number of records
+* Page 4:
+    * A **matrix** with areas as rows and years as columns, showing the count of reported values
+    * **Cards** displaying:
+        * Number of covered countries
+        * Number of covered years
+        * Total number of records
 
 ![png](\img\posts\fabric_end_to_end\Picture_4.png)
 
-    * Page 5:
-        * A **bar chart** of years with reported records by country/region (ascending order)
-        * **Slicer** for selecting an indicator
-        * **Card** showing the number of covered countries (dynamic based on the indicator selected)
+* Page 5:
+    * A **bar chart** of years with reported records by country/region (ascending order)
+    * **Slicer** for selecting an indicator
+    * **Card** showing the number of covered countries (dynamic based on the indicator selected)
 
 ![png](\img\posts\fabric_end_to_end\Picture_5.png)
 
