@@ -2,7 +2,7 @@
 layout: post
 title: "Sustainable Energy Access: An End-to-End Project in Microsoft Fabric"
 subtitle: "From World Bank API ingestion to a star schema model and interactive Power BI dashboard"
-background: 'img/posts/fabric_end_to_end/nicholas-doherty-pONBhDyOFoM-unsplash.jpg'
+background: '\img\posts\fabric_end_to_end\nicholas-doherty-pONBhDyOFoM-unsplash.jpg'
 ---
 
 *<a href="https://unsplash.com/photos/white-electic-windmill-pONBhDyOFoM?utm_content=creditShareLink&utm_medium=referral&utm_source=unsplash">Photo</a> by <a href="https://unsplash.com/@nrdoherty">Nicholas Doherty</a> on <a href="https://unsplash.com">Unsplash</a>
