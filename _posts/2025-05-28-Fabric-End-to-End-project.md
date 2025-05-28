@@ -107,34 +107,34 @@ A fully interactive Power BI report was developed within the Fabric environment,
 
 ##### *Pages 2 & 3: Comparison Through Indicators*
     
-    - Page 2: 
-        * Two **bar charts**:
-	      - Installed renewable electricity-generating capacity (watts per capita)
-          - International financial flows to developing countries
-        * **Slicers** for selecting multiple countries/regions and a year range (e.g. 1990–2022)
+    * Page 2: 
+          *  Two **bar charts**:
+	         * Installed renewable electricity-generating capacity (watts per capita)
+             * International financial flows to developing countries
+          * **Slicers** for selecting multiple countries/regions and a year range (e.g. 1990–2022)
 
 ![png](\img\posts\fabric_end_to_end\Page_2.png)
 
-    - Page 3:
+    * Page 3:
         * Two **column charts**:
-          - Clustered column chart for Final consumption of renewable energy (PJ)
-          - Stacked column chart for Share in total final energy consumption (%)
+          * Clustered column chart for Final consumption of renewable energy (PJ)
+          * Stacked column chart for Share in total final energy consumption (%)
 
 ![png](\img\posts\fabric_end_to_end\Page_3.png)
 
 
 ##### *Pages 4 & 5: Data Coverage and Completeness*
 
-    - Page 4:
+    * Page 4:
         * A **matrix** with areas as rows and years as columns, showing the count of reported values
         * **Cards** displaying:
-           - Number of covered countries
-           - Number of covered years
-           - Total number of records
+           * Number of covered countries
+           * Number of covered years
+           * Total number of records
 
 ![png](\img\posts\fabric_end_to_end\Picture_4.png)
 
-    - Page 5:
+    * Page 5:
         * A **bar chart** of years with reported records by country/region (ascending order)
         * **Slicer** for selecting an indicator
         * **Card** showing the number of covered countries (dynamic based on the indicator selected)
